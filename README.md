@@ -1,46 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Web App — GPS Ku
 
-## Getting Started
+Next.js web application for GPS/transport system with Driver and User roles. Includes legacy PHP student management system and React Native companion app.
 
-First, run the development server:
+## Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Web:** Next.js 14, React 18, TypeScript, Tailwind CSS 3
+- **Database:** Prisma (MySQL), next-auth, bcrypt
+- **Legacy:** PHP, MySQL
+- **Mobile:** React Native (Expo)
+
+## Project Structure
+
+```
+Web-app/
+├── app/
+│   ├── page.tsx              # Landing page (Driver/User selection)
+│   ├── components/
+│   │   ├── Navbar/           # Navigation
+│   │   ├── login/            # Login components
+│   │   └── register/         # Registration components
+│   └── api/datasql/          # SQL API routes
+├── native/                   # React Native Expo app
+│   ├── App.tsx
+│   └── package.json
+├── asdasd/                   # Legacy PHP system
+│   ├── index.php             # Student/course/exam management
+│   ├── connect_db.php        # DB connection
+│   ├── student_list.php      # Student CRUD
+│   ├── course_list.php       # Course CRUD
+│   └── exam_result.php       # Exam results
+├── prisma/schema.prisma      # User + Post models (MySQL)
+├── db.sql, test.sql          # SQL scripts
+└── package.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## React Native (Expo)
-
-There is a separate Expo app in `native/`.
+## Setup
 
 ```bash
-cd native
 npm install
-npx expo start
+npm run dev           # Next.js at localhost:3000
+npm run dev:native    # Expo native app
 ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Driver/User role selection
+- Login and registration
+- Legacy PHP CRUD for students, courses, exam results
+- React Native companion app structure
